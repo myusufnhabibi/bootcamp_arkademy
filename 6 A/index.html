@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Arkademy</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="assets/vendors/css/vendor.bundle.addons.css">
+  <link rel="stylesheet" href="assets/vendors/select2/dist/css/select2.min.css">
+  <link rel="stylesheet" href="assets/sweet/sweetalert.css">
+  <!-- endinject -->
+  <!-- plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" />
+  <!-- datatable -->
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css">
+</head>
+
+<body>
+  <!-- datatable -->
+  <script src="assets/js/jquery-3.1.1.min.js"></script>
+  <script src="assets/sweet/sweetalert.min.js"></script>
+  <script src="assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="index.html">
+          <img src="assets/images/logo.svg" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="index.html">
+          <img src="assets/images/logo-mini.svg" alt="logo" />
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+              <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="assets/images/faces/face1.jpg" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">Mohammad Yusuf</p>
+                  <div>
+                    <small class="designation text-muted">Programmer</small>
+                    <span class="status-indicator online"></span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block">
+                <i class="mdi mdi-plus"></i>
+              </button>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="menu-icon mdi mdi-account"></i>
+              <span class="menu-title">Product</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+<div class="main-panel">
+    <div class="content-wrapper">
+
+        <div class="row">
+            <div class="col-lg-9">
+                <h1>
+                    Product
+                    <small>Arkdemy Shop</small>
+                </h1>
+            </div>
+            <div class="col-lg-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-end">
+                        <li class="breadcrumb-item active"><a href="#">Product</a></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <button class="btn btn-success mb-2 ml-2" onclick="tambah()">Add</button>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped" id="table">
+                                <thead>
+                                    <tr>
+                                        <th width="30px">No.</th>
+                                        <th>Cashier</th>
+                                        <th>Product</th>
+                                        <th>Category</th>
+                                        <th>Price</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>1</td>
+                                    <td>Pevita Pearce</td>
+                                    <td>Latte</td>
+                                    <td>Drink</td>
+                                    <td>Rp. 10.0000</td>
+                                    <td>
+                                      <a class="btn btn-primary" onclick="ubah()">Edit</a>
+                                      <a class="btn btn-danger alert_notif">Delete</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>2</td>
+                                    <td>Raisa Andriani</td>
+                                    <td>Cake</td>
+                                    <td>Food</td>
+                                    <td>Rp. 15.0000</td>
+                                    <td>
+                                      <a class="btn btn-primary" onclick="ubah()">Edit</a>
+                                      <a class="btn btn-danger alert_notif">Delete</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>3</td>
+                                    <td>Raisa Andriani</td>
+                                    <td>Fried Rice</td>
+                                    <td>Food</td>
+                                    <td>Rp. 30.0000</td>
+                                    <td>
+                                      <a class="btn btn-primary" onclick="ubah()">Edit</a>
+                                      <a class="btn btn-danger">Delete</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>4</td>
+                                    <td>Pevita Pearce</td>
+                                    <td>Gudeg</td>
+                                    <td>Food</td>
+                                    <td>Rp. 35.0000</td>
+                                    <td>
+                                      <a class="btn btn-primary" onclick="ubah()">Edit</a>
+                                      <a class="btn btn-danger">Delete</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>5</td>
+                                    <td>Joko Purwadhi</td>
+                                    <td>Ice Tea</td>
+                                    <td>Drink</td>
+                                    <td>Rp. 55.0000</td>
+                                    <td>
+                                      <a class="btn btn-primary" onclick="ubah()">Edit</a>
+                                      <a class="btn btn-danger">Delete</a>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>6</td>
+                                    <td>Raisa Andriani</td>
+                                    <td>Gado-Gado</td>
+                                    <td>Food</td>
+                                    <td>Rp. 15.0000</td>
+                                    <td>
+                                      <a class="btn btn-primary" onclick="ubah()">Edit</a>
+                                      <a class="btn btn-danger">Delete</a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019
+                <a href="#" target="_blank">Mohammad Yusuf Noor Habibi</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with
+                <i class="mdi mdi-heart text-danger"></i>
+            </span>
+        </div>
+    </footer>
+</div>
+
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+
+<!-- plugins:js -->
+<script src="assets/vendors/js/vendor.bundle.base.js"></script>
+<script src="assets/vendors/js/vendor.bundle.addons.js"></script>
+<script src="assets/vendors/select2/dist/js/select2.min.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page-->
+<!-- End plugin js for this page-->
+<!-- inject:js -->
+<script src="assets/js/off-canvas.js"></script>
+<script src="assets/js/misc.js"></script>
+<script src="assets/js/custom.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page-->
+<script src="assets/js/dashboard.js"></script>
+<script type="text/javascript">
+  function tambah() {
+        $('#modal_form').modal('show');
+        $('.modal-title').text('Add');
+    }
+
+    function ubah() {
+        $('#edit_form').modal('show');
+        $('.modal-title').text('Edit');
+    }
+
+    $(document).ready(function(){
+            $('.alert_notif').on('click',function(){
+                swal ("Dihapus!", "Berhasil Dihapus", "success")
+                return false;
+            });
+        });
+</script>
+<!-- End custom js for this page-->
+</body>
+
+</html>
+
+<div class="modal fade" id="modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="id" />
+                    <div class="form-body">
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3">Product</label>
+                            <div class="col-md-9">
+                                <input name="nama" placeholder="Ex: Latte" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3">Cashier</label>
+                            <div class="col-md-9">
+                                <select name="jenis" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    <option value="">Pevita Pearce</option>
+                                    <option value="">Raisa Andriana</option>
+                                </select>
+                            </div>
+                        </div> 
+                         <div class="form-group row">
+                            <label class="col-form-label col-md-3">Category</label>
+                            <div class="col-md-9">
+                                <select name="jenis" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    <option value="">Food</option>
+                                    <option value="">Drink</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3">Price</label>
+                            <div class="col-md-9">
+                                <input name="jabatan" placeholder="Ex: 100000" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="edit_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="id" />
+                    <div class="form-body">
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3">Product</label>
+                            <div class="col-md-9">
+                                <input name="nama" placeholder="Ex: Latte" value="Latte" class="form-control" type="text">
+                                <small class="text-danger"></small>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3">Cashier</label>
+                            <div class="col-md-9">
+                                <select name="jenis" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    <option value="pria">Pevita Pearce</option>
+                                    <option selected value="wanita">Raisa Andriana</option>
+                                </select>
+                            </div>
+                        </div> 
+                         <div class="form-group row">
+                            <label class="col-form-label col-md-3">Category</label>
+                            <div class="col-md-9">
+                                <select name="jenis" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    <option value="pria">Food</option>
+                                    <option selected value="wanita">Drink</option>
+                                </select>
+                            </div>
+                        </div> 
+                        <div class="form-group row">
+                            <label class="col-form-label col-md-3">Price</label>
+                            <div class="col-md-9">
+                                <input name="jabatan" value="100000" class="form-control" type="text">
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
